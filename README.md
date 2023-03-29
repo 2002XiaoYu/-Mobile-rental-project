@@ -18,7 +18,7 @@
 
 - 以下是基于`pnpm create vite`创建的项目
 
-![image-20230310010819996](.\Vue3-H5_images\image-20230310010819996.png)
+![image-20230310010819996](./Vue3-H5_images/image-20230310010819996.png)
 
 项目配置:
 
