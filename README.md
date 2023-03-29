@@ -41,7 +41,7 @@
 
 - 配置项目的标题
 
-![image-20230310012624925](.\Vue3-H5_images\image-20230310012624925.png)
+![image-20230310012624925](./Vue3-H5_images/image-20230310012624925.png)
 
 - 配置`jsconfig.json`
 
@@ -151,7 +151,7 @@
 
 - `src`文件夹下的目录图片：
 
-![image-20230310024247705](.\Vue3-H5_images\image-20230310024247705.png)
+![image-20230310024247705](./Vue3-H5_images/image-20230310024247705.png)
 
 |    文件夹    |                             作用                             |
 | :----------: | :----------------------------------------------------------: |
@@ -181,7 +181,7 @@
 
     然后在`main.js`文件中进行引入使用
 
-    ![image-20230310031417551](.\Vue3-H5_images\image-20230310031417551.png)
+    ![image-20230310031417551](./Vue3-H5_images/image-20230310031417551.png)
 
   -  reset.css(常见配置的处理)
 
@@ -496,7 +496,7 @@ const itemClick = (index,item) => {
 >
 >   局部修改不成功的原因：
 >
->   ![image-20230313101045927](.\Vue3-H5_images\image-20230313101045927.png)
+>   ![image-20230313101045927](./Vue3-H5_images/image-20230313101045927.png)
 >
 >   看似修改1，但其实1的真实面孔是2的样子，所以局部的修改无法生效
 >
@@ -584,13 +584,13 @@ const positionClick = ()=>{
 }
 ```
 
-![image-20230314010149456](.\Vue3-H5_images\image-20230314010149456.png)
+![image-20230314010149456](./Vue3-H5_images/image-20230314010149456.png)
 
 ### 跳转到城市和隐藏TabBar
 
 - 点击以下此处需要跳转到`city`界面，此时就需要用到`编程式路由导航`+判断底部`TabBar`是否隐藏
 
-<img src=".\Vue3-H5_images\image-20230314013129282.png" style="zoom:53%;" />
+<img src="./Vue3-H5_images/image-20230314013129282.png" style="zoom:53%;" />
 
 > 需要用到的知识点：
 >
@@ -770,7 +770,7 @@ export * from ".modules/city"
 > - 方式2：局部滚动
 >   - 上下分离，划分成如下单独的两块地方互不影响
 
-<img src=".\Vue3-H5_images\image-20230314094855967.png" style="zoom:50%;" />
+<img src="./Vue3-H5_images/image-20230314094855967.png" style="zoom:50%;" />
 
 > 获取下方独立的数据方式：
 >
@@ -778,7 +778,7 @@ export * from ".modules/city"
 > - 但此时数据会是undefined，因为数据一开始是undefined，我们拿到的只是刚开始的值，而不是响应式的，这里就可以使用`计算属性`实时计算，当数值发生改变的时候，就重新获取数据
 >   - 注解：Vue 的计算属性会自动追踪响应式依赖。它会检测到 `publishedBooksMessage` 依赖于 `author.books`，所以当 `author.books` 改变时，任何依赖于 `publishedBooksMessage` 的绑定都会同时更新。
 
-![image-20230314101829006](.\Vue3-H5_images\image-20230314101829006.png)
+![image-20230314101829006](./Vue3-H5_images/image-20230314101829006.png)
 
 ```js
 const cityStore = useCityStore()
@@ -794,7 +794,7 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 
 - 或者在一开始遍历的时候就进行填入，这样一更新内容就会重新遍历
 
-![image-20230314105504901](.\Vue3-H5_images\image-20230314105504901.png)
+![image-20230314105504901](./Vue3-H5_images/image-20230314105504901.png)
 
 ### 城市分组列表数据展示
 
@@ -810,7 +810,7 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 >   - 加上热门城市后，侧边栏的A-Z与下拉时显示的A会错位一个地方，如下图显示，这是因为侧边栏是动态的写死的，会根据我们显示的一 一从上往下进行对应
 >   - 通过组件库提供的`index-list`属性，我们能够自定义修改，但是并不能说只是仅仅在上面再加上一个`#`就结束了，因为我们不一定每个字母都有城市，如果中间有字母是没有对应城市的，就又会乱掉。所以这个侧边栏的数据也需要从服务器动态获取。然后通过函数将`#`unshift到从服务器拿到侧边栏数据的最前面
 
-![image-20230314214104488](.\Vue3-H5_images\image-20230314214104488.png)
+![image-20230314214104488](./Vue3-H5_images/image-20230314214104488.png)
 
 ### 选择城市回退和回显效果
 
@@ -874,7 +874,7 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 > - 这里热门城市的显示偏下是因为CSS行高的问题，由于我们引入`normalizs.css`进行重置，里面对整个html的行高是有进行全局设置的，我们只需要自己设置一下行高覆盖掉他的继承就行了。
 >   - 处理方式2：全局CSS修改为自己需要的
 
-![image-20230315185854793](.\Vue3-H5_images\image-20230315185854793.png)
+![image-20230315185854793](./Vue3-H5_images/image-20230315185854793.png)
 
 ## 首页点击搜索-列表数据
 
@@ -884,7 +884,7 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 >
 > - 传递的参数通过`$router`传递(参数内容会显示在URL上)
 >
-> ![image-20230316031930269](.\Vue3-H5_images\image-20230316031930269.png)
+> ![image-20230316031930269](./Vue3-H5_images/image-20230316031930269.png)
 >
 > - 通过路由元数据`mate`来进行隐藏底部`TabBar`
 > - 公用的内容比如城市信息什么的就不用通过这里这样传了，直接使用`pinia`就行了，不用解构
@@ -943,17 +943,17 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 >         }
 >     ```
 
-![image-20230316100830116](.\Vue3-H5_images\image-20230316100830116.png)
+![image-20230316100830116](./Vue3-H5_images/image-20230316100830116.png)
 
 #### 列表数据的不同类型展示
 
 - 类似如下两种不同类型的展示
 
-![image-20230316112601841](.\Vue3-H5_images\image-20230316112601841.png)
+![image-20230316112601841](./Vue3-H5_images/image-20230316112601841.png)
 
 - 类型的区分是通过服务器的接口数据进行判断的
 
-![image-20230316113126975](.\Vue3-H5_images\image-20230316113126975.png)
+![image-20230316113126975](./Vue3-H5_images/image-20230316113126975.png)
 
 - 根据`discoveryContentType`为3还是为9进行不同的判断`v-if`，如果有更多的数字类型就继续增加判断，然后根据不同的数字去做不同的效果展示
 
@@ -986,7 +986,7 @@ const cityGroup = computed(()=>allCities.value[activeName.value])
 - 在`home`组件中进行监听窗口的滚动，我这里的视图高度还会再加50px是因为我的tabBar底部也是视口的一部分
 - 这个监听的过程我们可能不止这里会用到，这里的逻辑我们可以封装的`hook`里面
 
-<img src=".\Vue3-H5_images\image-20230322202515106.png" style="zoom:50%;" />
+<img src="./Vue3-H5_images/image-20230322202515106.png" style="zoom:50%;" />
 
 ### 监听滚动hook函数的抽取
 
@@ -1160,13 +1160,13 @@ function throttle(fn, delay) {
 
 > 如果我们使用的底部tabBar是组件库的组件的话，那需要进行一定的调整，那就是加上 下方图片中圈起来的`route`
 >
-> ![image-20230323135554233](.\Vue3-H5_images\image-20230323135554233.png)
+> ![image-20230323135554233](./Vue3-H5_images/image-20230323135554233.png)
 >
 > 根据组件库中的提示我们可以知道这个的作用是用来匹配`页面路径`跟`标签的to属性`的
 >
-> ![image-20230323135841429](.\Vue3-H5_images\image-20230323135841429.png)
+> ![image-20230323135841429](./Vue3-H5_images/image-20230323135841429.png)
 
-<img src=".\Vue3-H5_images\image-20230323140555018.png" style="zoom:50%;" />
+<img src="./Vue3-H5_images/image-20230323140555018.png" style="zoom:50%;" />
 
 ```javascript
 //记录点击的情况，排他思想
@@ -1250,11 +1250,11 @@ export function formatMonthDay(date,formatStr="MM月DD日"){
   }
 ```
 
-![image-20230324232348206](.\Vue3-H5_images\image-20230324232348206.png)
+![image-20230324232348206](./Vue3-H5_images/image-20230324232348206.png)
 
 > 如果数据请求失败的话，那也需要将loading等待界面设置为false，但是我们不直接添加在catch之后，而是放在拦截器中。那上面写在request中的也可以去除掉了，换在拦截器中。好处是结构层次会更新分明
 
-![image-20230324234536819](.\Vue3-H5_images\image-20230324234536819.png)
+![image-20230324234536819](./Vue3-H5_images/image-20230324234536819.png)
 
 ### 点击首页卡片跳转到详情页
 
@@ -1264,17 +1264,17 @@ export function formatMonthDay(date,formatStr="MM月DD日"){
 >
 > - 方法2：直接把点击事件写在组件上面，这个点击事件能不能写在组件上面是需要看场景的，因为我们写在组件身上的点击事件不是绑定在组件身上的，而是绑定在组件的根元素上面(**也可以通过$attr进行指定**)，而在当前的情况下，是符合条件的，因为我们就是需要不管点击卡片的哪个地方都要触发跳转详情页
 
-![image-20230325004104681](.\Vue3-H5_images\image-20230325004104681.png)
+![image-20230325004104681](./Vue3-H5_images/image-20230325004104681.png)
 
 - 在`views`视图文件夹里创建`details`文件夹，在此文件夹里再创建`details.vue`文件。通过点击事件进行**编程式路由**跳转，参数的携带通过添加后缀进行跟进，不采用query
 
-![image-20230325010935795](.\Vue3-H5_images\image-20230325010935795.png)
+![image-20230325010935795](./Vue3-H5_images/image-20230325010935795.png)
 
-![image-20230325010955925](.\Vue3-H5_images\image-20230325010955925.png)
+![image-20230325010955925](./Vue3-H5_images/image-20230325010955925.png)
 
 - 地址上的表现形式：
 
-![image-20230325011011950](.\Vue3-H5_images\image-20230325011011950.png)
+![image-20230325011011950](./Vue3-H5_images/image-20230325011011950.png)
 
 > - 使用冒号（:）定义的参数是动态路由参数，可以将参数作为路径的一部分，动态传递信息到路由组件中。例如在上面的示例中，参数“id”将作为路径的一部分，动态传递给路由组件“@/views/details/details.vue”。
 >
@@ -1312,7 +1312,7 @@ export function formatMonthDay(date,formatStr="MM月DD日"){
   - total就是总共的数量
   - 组件库采用的是作用域插槽的解构方式
 
-![image-20230327073628493](.\Vue3-H5_images\image-20230327073628493.png)
+![image-20230327073628493](./Vue3-H5_images/image-20230327073628493.png)
 
 #### 轮播图数据的转化和展示
 
@@ -1320,19 +1320,19 @@ export function formatMonthDay(date,formatStr="MM月DD日"){
 
 **目前效果：**
 
-![image-20230327074621804](.\Vue3-H5_images\image-20230327074621804.png)
+![image-20230327074621804](./Vue3-H5_images/image-20230327074621804.png)
 
 **需要实现的效果：**
 
-![image-20230327074606478](.\Vue3-H5_images\image-20230327074606478.png)
+![image-20230327074606478](./Vue3-H5_images/image-20230327074606478.png)
 
 对数据进行划分前需要看接口提供的哪些数据给我们：
 
-![image-20230327074814520](.\Vue3-H5_images\image-20230327074814520.png)
+![image-20230327074814520](./Vue3-H5_images/image-20230327074814520.png)
 
-![image-20230327074840183](.\Vue3-H5_images\image-20230327074840183.png)
+![image-20230327074840183](./Vue3-H5_images/image-20230327074840183.png)
 
-![image-20230327074857740](.\Vue3-H5_images\image-20230327074857740.png)
+![image-20230327074857740](./Vue3-H5_images/image-20230327074857740.png)
 
 > 其中`title`是当前照片是什么类型，`url`和`albumUrl`是提供的图片，`orderIndex`是索引，`enumPictureCategory`则是当前类型照片的第几张。
 >
@@ -1345,26 +1345,26 @@ export function formatMonthDay(date,formatStr="MM月DD日"){
 - 第一个for循环初始化不同类型的数组，第二个for循环填入数据
 - 但是比较浪费性能
 
-![image-20230327081554265](.\Vue3-H5_images\image-20230327081554265.png)
+![image-20230327081554265](./Vue3-H5_images/image-20230327081554265.png)
 
 `更为简洁`：
 
 - 一次循环成型
   - 第一次取到valueArray是没有值的(我们赋值的`enumPictureCategory`是当前类型的第几张)，只有键没有值，所以进行一个判断，第一次没有值的时候赋值一个空数组，并且将空数组赋值到`swipeGroup`这个对象中。为当前对象的第n个位置初始化一个空数组。最后将valueArray填入数据。由于`enumPictureCategory`是动态的，所以来的只要不是之前初始化过的位置，就会被丢进去初始化一遍空数组，不会重复初始化。
 
-![image-20230327082016620](.\Vue3-H5_images\image-20230327082016620.png)
+![image-20230327082016620](./Vue3-H5_images/image-20230327082016620.png)
 
 `一次形成的数据`：
 
-![image-20230327163318833](.\Vue3-H5_images\image-20230327163318833.png)
+![image-20230327163318833](./Vue3-H5_images/image-20230327163318833.png)
 
 - 随着点进入的数据的不同形成的数组数量也不同
 
-![image-20230327163418978](.\Vue3-H5_images\image-20230327163418978.png)
+![image-20230327163418978](./Vue3-H5_images/image-20230327163418978.png)
 
 - 这个数据后面会用上。先通过v-for循环父传子的数据进行展示`title`
 
-![image-20230327182809544](.\Vue3-H5_images\image-20230327182809544.png)
+![image-20230327182809544](./Vue3-H5_images/image-20230327182809544.png)
 
 - 对于这个`【】`和`：`占据过大的位置可以通过`replace`解决，也可以通过正则解决
 
@@ -1381,7 +1381,7 @@ const getName = (name) => {
 
 > 我们目前看指示器并没办法区分我们目前看的是哪类
 >
-> ![image-20230327224652847](.\Vue3-H5_images\image-20230327224652847.png)
+> ![image-20230327224652847](./Vue3-H5_images/image-20230327224652847.png)
 >
 > 假如我看的是卧室，我希望能够跟卫生间和其他分开，其他的同理，那这个就需要一个判断。判断当前轮播图的页面的类别跟指示器的哪个部分能够对应上，给指示器加上其他的样式。然后根据这同样的思路加上其他的样式(例如当前类型的第几张/当前类型的总数量)
 >
@@ -1391,13 +1391,13 @@ const getName = (name) => {
 
 - 接下来大多数就是展示数据了，需要将不同的模块封装成不同的组件进行展示，纯粹展示接口的数据比较简单。下面框起来的封装成一个`detail_02-infos.vue`组件，放在`details`文件夹下的组件文件夹中。
 
-![image-20230328142448811](.\Vue3-H5_images\image-20230328142448811.png)
+![image-20230328142448811](./Vue3-H5_images/image-20230328142448811.png)
 
 #### 详情区域的封装和房屋设施展示
 
 - 这部分格式很像，如下图分成了3部分。只有中间的不一样。所以我们的做法是封装公用的组件`detail-section`在`components`中，然后中间内容部分预留插槽
 
-![image-20230328143145378](.\Vue3-H5_images\image-20230328143145378.png)
+![image-20230328143145378](./Vue3-H5_images/image-20230328143145378.png)
 
 - 公用的全局组件再二次封装进我们`detail`的局部组件中
 
@@ -1412,17 +1412,17 @@ const getName = (name) => {
 > - 使用之前需要先注册账号，如果你电脑本身已经登录过百度账号，这边会直接自动登录
 > - 填写开发者认证信息(点击导航栏的`控制台`选项，进入注册开发者界面)
 
-![image-20230329015232501](.\Vue3-H5_images\image-20230329015232501.png)
+![image-20230329015232501](./Vue3-H5_images/image-20230329015232501.png)
 
-![image-20230329015530170](.\Vue3-H5_images\image-20230329015530170.png)
+![image-20230329015530170](./Vue3-H5_images/image-20230329015530170.png)
 
 - 在注册的第三步中，需要在使用场景中填入不少于100字的使用描述
 
-![image-20230329022457459](.\Vue3-H5_images\image-20230329022457459.png)
+![image-20230329022457459](./Vue3-H5_images/image-20230329022457459.png)
 
 - 这里使用chatGPT4生成文案解决问题
 
-![image-20230329022525238](.\Vue3-H5_images\image-20230329022525238.png)
+![image-20230329022525238](./Vue3-H5_images/image-20230329022525238.png)
 
 > 在未来智慧城市的构建过程中，我们计划利用百度地图开发平台，为用户提供更加便捷和智能的出行服务。我们将开发一款名为"智慧出行助手"的移动应用，通过该应用，用户可以根据实时的交通信息、天气情况以及出行需求，为自己规划出最佳的出行方案。以下是我们打算使用百度地图开发平台的几个使用场景：
 >
@@ -1436,25 +1436,25 @@ const getName = (name) => {
 
 - 填写必要信息之后认证成功
 
-![image-20230329023110954](.\Vue3-H5_images\image-20230329023110954.png)
+![image-20230329023110954](./Vue3-H5_images/image-20230329023110954.png)
 
 - 创建应用
 
-![image-20230329023346952](.\Vue3-H5_images\image-20230329023346952.png)
+![image-20230329023346952](./Vue3-H5_images/image-20230329023346952.png)
 
 - 填写内容后提交得到`访问应用AK`
 
-![image-20230329023655470](.\Vue3-H5_images\image-20230329023655470.png)
+![image-20230329023655470](./Vue3-H5_images/image-20230329023655470.png)
 
-![image-20230329023718655](.\Vue3-H5_images\image-20230329023718655.png)
+![image-20230329023718655](./Vue3-H5_images/image-20230329023718655.png)
 
 - 使用的话通过开发文档
 
-![image-20230329023827024](.\Vue3-H5_images\image-20230329023827024.png)
+![image-20230329023827024](./Vue3-H5_images/image-20230329023827024.png)
 
 - 然后从开发指南选项就可以开始入门使用了(步骤在开发指南中很详细)
 
-![image-20230329024046685](.\Vue3-H5_images\image-20230329024046685.png)
+![image-20230329024046685](./Vue3-H5_images/image-20230329024046685.png)
 
 - 在项目文件的`index.html`中加入如下内容：
   - `index.html` 文件中一般包含了应用程序所需的所有的 JavaScript 和 CSS 文件的引入，以及应用程序的根元素的声明。所以我们百度的JavaScript内容引入到这里面
@@ -1478,7 +1478,7 @@ const getName = (name) => {
 
 - 还记得前面刚开始封装hook中这份逻辑中需要区分的点吗
 
-![image-20230329131614840](.\Vue3-H5_images\image-20230329131614840.png)
+![image-20230329131614840](./Vue3-H5_images/image-20230329131614840.png)
 
 - 需要注意的点：
   - 在展示`TabControl`的时候，需要先使用CSS进行固定定位将其固定在当前视口最上面，不然就算进行判断显示出来，没有固定住会在原本的位置上，就算拖动到该显示出`TabControl`的时候也看不到他，不是没有展示出来，而是展示出来了但是没有固定住已经被滑动出可视范围外了
@@ -1487,7 +1487,7 @@ const getName = (name) => {
 
 > 这个交互我们就需要将`TabControl`栏跟内容进行一个交互关联起来，才能够在点击按键的时候能够跳转到对应的位置中去。我们通过`defineEmit`将`TabControl`的索引拿到传递给`父组件`跟`父组件TabControl`的内容联系起来
 >
-> <img src=".\Vue3-H5_images\image-20230329152738200.png" style="zoom:50%;" />
+> <img src="./Vue3-H5_images/image-20230329152738200.png" style="zoom:50%;" />
 
 - 在所有的组件中加上一个`ref`，然后再js中获取对应的值(由于我们直接在组件中使用ref，如果直接.value获取到的是组件本身，需要在`.value`的基础上继续`.$el`拿到他的根元素)
 - 如果单纯的`ref`的话，我们需要给每个组件(除了第一个)都绑定上，然后重复的进行上面的操作。这样的操作肯定是不好的，会产生大量重复的代码。所以我们使用`:ref`动态绑定函数
@@ -1508,14 +1508,14 @@ const getName = (name) => {
 
 > 目前的情况下在详情页中点击左上角的返回会报错。这是因为在点击返回的时候，详情页的组件都会进行销毁，但是里面的`getSectionRef`会被触发，但是组件已经销毁了，获取到组件的信息就是`null`，从`null`中获取值就会报错，所以只需要在这里加个判断就行
 
-![image-20230329173859199](.\Vue3-H5_images\image-20230329173859199.png)
+![image-20230329173859199](./Vue3-H5_images/image-20230329173859199.png)
 
 ### 页面滚动匹配TabControl索引
 
 - 目前有个问题还未解决，当我们详情页下拉的时候，`TabControl`索引应该要随着下拉内容的变化而变化，而不是只有点击的时候才进行变化
 - 需求： 页面滚动， 滚动到一定的位置时， 显示正确的tabControl的索引(标题)
 
-<img src=".\Vue3-H5_images\image-20230329174538670.png" style="zoom:50%;" />
+<img src="./Vue3-H5_images/image-20230329174538670.png" style="zoom:50%;" />
 
 - 其中用到的算法
 
@@ -1545,13 +1545,13 @@ watch(scrollTop, async (newValue) => {//距离顶点 新的值
 
 在前面中，百度地图的API会报警告如下：
 
-![image-20230330003258697](.\Vue3-H5_images\image-20230330003258697.png)
+![image-20230330003258697](./Vue3-H5_images/image-20230330003258697.png)
 
 - 解决方法：
 
   - 在`index.html`中修改一下内容，警告就能消除掉
 
-  ![image-20230330003504231](.\Vue3-H5_images\image-20230330003504231.png)
+  ![image-20230330003504231](./Vue3-H5_images/image-20230330003504231.png)
 
 - 我们在点击`tabControl`的时候，如果从第一个跳转到第三个，或者就是说跳转的中间还有其他内容的话，会有一个颜色一格一格跳过去的停顿感，而不是直接一步到位跳转过去。
 - 解决方案：声明一个变量`isClick`(存放布尔值)，当我们触发点击事件的时候，就不执行过渡效果(跳过我们设置触发滑动索引的算法)，滑动的时候就触发过渡效果
@@ -1594,7 +1594,7 @@ onActivated(() => {
 - 我们在Vite打包中，使用`postcss`工具中的`plugin`的`postcss-px-to-viewpost`可以将px转化成vh和vw的单位
 - Vant组件库也有提供
 
-![image-20230330021354434](.\Vue3-H5_images\image-20230330021354434.png)
+![image-20230330021354434](./Vue3-H5_images/image-20230330021354434.png)
 
 - 使用命令：`pnpm install postcss-px-to-viewport -D`进行安装
 
