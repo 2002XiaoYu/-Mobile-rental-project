@@ -1,0 +1,32 @@
+:root{
+  --primary-color:#ff9854;
+  --primary-icon-color:#fe893a;
+  /* 搜索框图标颜色 使用!important加强权重值 */
+  --van-search-left-icon-color:var(--primary-color) !important;
+
+  --van-index-bar-index-active-color:var(--primary-color) !important;
+  --van-index-anchor-sticky-text-color:var(--primary-color) !important;
+  /* 全局修改样式 */
+  --van-nav-bar-text-color:var(--primary-color) !important;
+  --van-nav-bar-icon-color:var(--primary-icon-color) !important;
+  
+}
+
+body{
+  font-size: 14px;
+}
+
+.top-page{
+  position: relative;
+  z-index: 9;
+  height: 100vh;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.icon_check{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(../img/detail/icon_check.png) 0 0/100% 100%;
+}
